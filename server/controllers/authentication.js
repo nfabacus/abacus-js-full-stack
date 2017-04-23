@@ -8,7 +8,7 @@ function tokenForUser(user) {
 }
 
 exports.signin = function(req, res, next) {
-  // User has already had their email and password auth'd
+  // User has already had their username and password auth'd
   // We just need to give them a token.
   res.send({ token: tokenForUser(req.user)});
 
@@ -16,25 +16,27 @@ exports.signin = function(req, res, next) {
 
 exports.signup = function(req, res, next) {
   const email = req.body.email;
+  const username = req.body.username;
   const password = req.body.password;
 
   // input checks, better checks required.
-  if(!email || !password) {
-    return res.status(422).send({ error: 'Please provide email and password' });
+  if(!email || !username || !password) {
+    return res.status(422).send({ error: 'Please provide email, username and password.' });
   }
 
-  // See if a user with the given email exists
-  User.findOne({ email: email }, function(err, existingUser){
+  // See if a user with the given username exists
+  User.findOne({ username: username }, function(err, existingUser){
     if(err) { return next(err); }
 
-    // If a user with email exist, return an error.
+    // If a user with username exist, return an error.
     if(existingUser) {
-      return res.status(422).send({ error: 'Email is in use.'});
+      return res.status(422).send({ error: 'This username is already taken. Please choose a different username.'});
     }
 
-    // If a user with email does NOT exist, create and save user record
+    // If a user with username does NOT exist, create and save user record
     const user = new User({
       email: email,
+      username: username,
       password: password
     });
 

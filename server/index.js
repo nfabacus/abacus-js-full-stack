@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 // DB Setup
-mongoose.connect('mongodb://localhost:auth/auth');
+mongoose.connect('mongodb://localhost/abacus-learning-db');
 
 // App Setup middlewares
 app.use(morgan('combined')); //morgan logs incoming requests, used for debugging

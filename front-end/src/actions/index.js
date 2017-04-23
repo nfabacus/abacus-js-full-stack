@@ -9,9 +9,9 @@ import {
 
 const ROOT_URL = 'http://localhost:3090';
 
-export function signupUser({ email, password }) {
+export function signupUser({ email, username, password }) {
   return function(dispatch) {
-    axios.post(`${ROOT_URL}/signup`, {email, password})
+    axios.post(`${ROOT_URL}/signup`, { email, username, password})
       .then(response => {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
@@ -21,13 +21,13 @@ export function signupUser({ email, password }) {
   }
 }
 
-export function signinUser({ email, password }) {
+export function signinUser({ username, password }) {
   return function(dispatch) {
     // Purpose of redux-thunk is to dispatch multiple different actions inside action creator. can also insert different logic.  can wait as long as we want to dispatch action, in contrary to normal synchronous actions
 
-    // Submit email/password to the server
-       //below {email, password} is the short for { email:email, password:password }
-    axios.post(`${ROOT_URL}/signin`, {email, password})
+    // Submit username/password to the server
+       //below {username, password} is the short for { username:username, password:password }
+    axios.post(`${ROOT_URL}/signin`, {username, password})
       .then(response => {
         // If request is good,
         // - Update state to indicate user is authenticated
