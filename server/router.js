@@ -1,4 +1,6 @@
 const Authentication = require('./controllers/authentication');
+const Permission = require('./controllers/permission');
+
 const passportService = require('./services/passport');
 const passport = require('passport');
 
@@ -16,5 +18,10 @@ module.exports = function(app) {
   app.post('/signin', requireSignin, Authentication.signin);
 
   app.post('/signup', Authentication.signup);
+
+  app.get('/course', Permission.confirmStudent, function(req, res){
+    res.send({ message: 'You are a student!'});
+  });
+  // app.get('/course', Permission.confirmStudent,  Permission.confirmParent, ClassController.getClass)
 
 }
