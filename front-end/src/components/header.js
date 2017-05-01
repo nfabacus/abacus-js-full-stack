@@ -19,12 +19,14 @@ class Header extends Component {
     } else {
       // show a link to sign in or sign up
       return (
+        <div>
         <li className="nav-item" key={1}>
           <Link className="nav-link" to="/signin">Sign in</Link>
-        </li>,
+        </li>
         <li className="nav-item" key={2}>
           <Link className="nav-link" to="/signup">Sign up</Link>
         </li>
+        </div>
       );
     }
 
