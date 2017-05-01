@@ -2,13 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory();
 import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
 import { AUTH_USER } from './actions/types';
 
-import Welcome from './components/welcome';
+import Header from './components/header';
 import Signup from './components/auth/signup';
 import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
@@ -28,14 +36,15 @@ if(token) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Welcome} />
-        <Route path="signup" component={Signup} />
-        <Route path="signin" component={Signin} />
-        <Route path="signout" component={Signout} />
-        <Route path="dashboard" component={RequireAuth(Dashboard)} />
-      </Route>
+    <Router history={history}>
+      <div>
+        <Header />
+        <Route exact path="/" component={App}/>
+        <Route path="/signup" component={Signup} />
+        <Route path="/signin" component={Signin} />
+        <Route path="/signout" component={Signout} />
+        <Route path="/dashboard" component={RequireAuth(Dashboard)} />
+      </div>
     </Router>
   </Provider>
   , document.querySelector('.container'));

@@ -4,14 +4,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = [
   "lodash",
-  "react",
-  "react-dom",
-  "react-redux",
-  "react-router",
-  "redux",
-  "redux-form",
-  "redux-thunk",
-  "bootstrap-loader"
+  "bootstrap-loader",
+  "jquery",
 ];
 
 module.exports = {
@@ -19,9 +13,11 @@ module.exports = {
     bundle: './src/index.js',
     vendor: VENDOR_LIBS
   },
+  devtool: 'source-map',
+
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
@@ -31,19 +27,23 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        use: 'raw',
+        use: 'raw-loader',
         test: /\.html$/
       },
       {
           test: /\.scss$/,
           exclude: /node_modules/,
           loaders: [
-              'style',
-              'css',
-              'autoprefixer?browsers=last 3 versions',
-              'sass?outputStyle=expanded'
+              'style-loader',
+              'css-loader',
+              'autoprefixer-loader?browsers=last 3 versions',
+              'sass-loader?outputStyle=expanded'
           ]
-      }
+      },
+      {
+          test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+          loader: 'url-loader?limit=100000'
+      },
     ]
   },
   plugins: [
