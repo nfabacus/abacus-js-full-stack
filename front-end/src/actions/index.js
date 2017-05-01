@@ -1,7 +1,5 @@
 import axios from 'axios';
-import createBrowserHistory from 'history/createBrowserHistory'
-
-const browserHistory = createBrowserHistory();
+import {history} from '../reactApp'
 
 import {
   AUTH_USER,

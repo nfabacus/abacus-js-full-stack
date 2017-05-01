@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory'
 
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
