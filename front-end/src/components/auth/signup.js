@@ -10,7 +10,7 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
   <div>
     <label>{label}</label>
     <div>
-      <input {...input} placeholder={label} type={type}/>
+      <input className="form-control" {...input} placeholder={label} type={type}/>
       {touched && error && <div className="error">{error}</div>}
     </div>
   </div>
@@ -19,7 +19,7 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
 class Signup extends Component {
   handleFormSubmit(formProps) {
     // Call action creator to sign up the user!
-    actions.signupUser(formProps);
+    this.props.signupUser(formProps);
   }
 
   renderAlert(){
@@ -97,5 +97,5 @@ Signup = reduxForm({
   form: 'signup',
   validate
 })(Signup)
-Signup = connect(mapStateToProps)(Signup)
+Signup = connect(mapStateToProps,actions)(Signup)
 export default Signup
