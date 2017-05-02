@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {history} from '../reactApp';
+// import {history} from '../reactApp';
+import { push } from 'react-router-redux';
 
 import {
   AUTH_USER,
@@ -16,9 +17,13 @@ export function signupUser({ email, username, password }) {
       .then(response => {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
-        history.push('/dashboard');
+        // history.push('/dashboard');
+        dispatch(push('/dashboard'))
       })
-      .catch(error => dispatch(authError(error.response.data.error)));
+      .catch(error => {
+        //throw error;
+        dispatch(authError(error.response.data.error));
+      });
   }
 }
 
@@ -38,7 +43,8 @@ export function signinUser({ username, password }) {
         localStorage.setItem('token', response.data.token);
 
         // - redirect to the route '/dashboard'
-        browserHistory.push('/dashboard');
+        // browserHistory.push('/dashboard');
+        dispatch(push('/dashboard'));
       })
       .catch(() => {
         // If request is bad,
