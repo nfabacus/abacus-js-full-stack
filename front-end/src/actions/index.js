@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {history} from '../reactApp'
+import {history} from '../reactApp';
 
 import {
   AUTH_USER,
@@ -16,7 +16,7 @@ export function signupUser({ email, username, password }) {
       .then(response => {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
-        browserHistory.push('/dashboard');
+        history.push('/dashboard');
       })
       .catch(error => dispatch(authError(error.response.data.error)));
   }
