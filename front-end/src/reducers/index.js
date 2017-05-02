@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   form,
   auth: authReducer,
   messanger: messageReducer,
-  routing: routerReducer
+  routing: routerReducer  //we have added this routerReducer from react-router-redux
 });
 
 export default rootReducer;

@@ -25,7 +25,7 @@ const finalCreateStore = compose(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store) //this is syncing the browserHistory.
 
 
 const token = localStorage.getItem('token');

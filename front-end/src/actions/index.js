@@ -1,6 +1,6 @@
 import axios from 'axios';
 // import {history} from '../reactApp';
-import { push } from 'react-router-redux';
+import { push } from 'react-router-redux'; //this library is added.  With this routes are stored in state.
 
 import {
   AUTH_USER,

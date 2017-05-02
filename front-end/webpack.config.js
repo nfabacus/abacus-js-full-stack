@@ -21,7 +21,7 @@ module.exports = {
   },
 
     devServer: {
-    
+
       historyApiFallback: true, // true for index.html upon 404, object for multiple paths
       hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
       https: false, // true for self-signed, object for cert authority
@@ -43,10 +43,10 @@ module.exports = {
           test: /\.scss$/,
           exclude: /node_modules/,
           loaders: [
-              'style-loader',
+              'style-loader', //from webpack2 you have to use style-loader for below loaders to take effect. this will covert css to javascript.
               'css-loader',
               'autoprefixer-loader?browsers=last 3 versions',
-              'sass-loader?outputStyle=expanded'
+              'sass-loader?outputStyle=expanded' //this one is applied first.
           ]
       },
       {
