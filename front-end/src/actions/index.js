@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {history} from '../reactApp'
+import { push } from 'react-router-redux';
 
 import {
   AUTH_USER,
@@ -16,9 +16,12 @@ export function signupUser({ email, username, password }) {
       .then(response => {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
-        browserHistory.push('/dashboard');
+        dispatch(push('/dashboard'))
       })
-      .catch(error => dispatch(authError(error.response.data.error)));
+      .catch(error => {
+        //throw error;
+        dispatch(authError(error.response.data.error))
+      });
   }
 }
 
