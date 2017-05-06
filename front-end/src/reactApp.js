@@ -14,6 +14,7 @@ import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
 import Dashboard from './components/dashboard';
 import RequireAuth from './components/auth/require_auth';
+import HideFromAuth from './components/auth/hide_from_auth.js';
 import reducers from './reducers';
 
 const finalCreateStore = compose(
@@ -41,10 +42,10 @@ ReactDOM.render(
         <Route path="/" component={App}>
           <IndexRoute component={Welcome} />
 
-          <Route path="/signup" component={Signup} />
-          <Route path="/signin" component={Signin} />
+          <Route path="/signup" component={HideFromAuth(Signup)} />
+          <Route path="/signin" component={HideFromAuth(Signin)} />
           <Route path="/signout" component={Signout} />
-          <Route path="/dashboard" component={RequireAuth(Dashboard)} />
+          <Route path="/dashboard" component={RequireAuth(Dashboard)} />  {/*protected route example - require auths  */}
         </Route>
     </Router>
   </Provider>

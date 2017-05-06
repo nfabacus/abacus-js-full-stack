@@ -77,6 +77,8 @@ export function fetchMessage() {
         type: FETCH_MESSAGE,
         payload: response.data.message
       });
+    }, error=>{
+      console.log(error);
     });
   }
 }
