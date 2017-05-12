@@ -55,7 +55,7 @@ function mapStateToProps(state) {
 }
 
 Signin = reduxForm({
-  form: 'signin'
+  form: 'signin'  //give name to the form, here it is 'signin'
 })(Signin);
 Signin = connect(mapStateToProps, actions)(Signin)
 export default Signin

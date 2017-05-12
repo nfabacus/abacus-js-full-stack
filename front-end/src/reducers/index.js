@@ -5,7 +5,7 @@ import messageReducer from './message_reducer';
 import { routerReducer } from 'react-router-redux'
 
 const rootReducer = combineReducers({
-  form,
+  form,    // This is a form reducer from redux-form.
   auth: authReducer,
   messanger: messageReducer,
   routing: routerReducer  //we have added this routerReducer from react-router-redux
