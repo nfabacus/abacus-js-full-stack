@@ -8,6 +8,11 @@ const LocalStrategy = require('passport-local');
 // Create local Strategy
 const localOptions = { usernameField: 'username' };
 const localLogin = new LocalStrategy(localOptions, function(username, password, done) {
+
+  // do validation here:
+  // if fails, return done({error:"failed Validation"}, false)
+  // if success, just carry on.
+
   // Verify this username and password, call done with the user
   // if it is the correct username and password
   // Otherwise, call done with false

@@ -24,6 +24,8 @@ exports.signup = function(req, res, next) {
   if(!email || !username || !password) {
     return res.status(422).send({ error: 'Please provide email, username and password.' });
   }
+  // I can check email format. username length,etc.
+  // return res.status(422).send...error message.
 
   // See if a user with the given username exists
   User.findOne({ username: username }, function(err, existingUser){

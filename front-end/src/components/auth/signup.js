@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 import {connect} from 'react-redux';
+import Helpers from './helpers';
 
 //Validations
 const required = value => value ? undefined : 'Required'
@@ -66,16 +67,18 @@ function mapStateToProps(state) {
   return { errorMessage: state.auth.error };
 }
 
-
 function validate(formProps) {
   const errors = {};
 
   if(!formProps.email) {
     errors.email = 'Please enter your email address.';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formProps.email)) {
+    errors.email = 'Invalid email address';
   }
 
   if(!formProps.username) {
     errors.username = 'Please enter a username.';
+    //try to use regex
   }
 
   if(!formProps.password) {
@@ -93,9 +96,11 @@ function validate(formProps) {
   return errors;
 }
 
+console.log('Helpers.validate: ', Helpers.validate);
+
 Signup = reduxForm({
   form: 'signup',
-  validate
+  validate: validate
 })(Signup)
 Signup = connect(mapStateToProps,actions)(Signup)
 export default Signup

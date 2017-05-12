@@ -22,6 +22,7 @@ export function signupUser({ email, username, password }) {
       })
       .catch(error => {
         //throw error;
+        //below dispatches error from the backend server.
         dispatch(authError(error.response.data.error));
       });
   }
@@ -35,6 +36,7 @@ export function signinUser({ username, password }) {
        //below {username, password} is the short for { username:username, password:password }
     axios.post(`${ROOT_URL}/signin`, {username, password})
       .then(response => {
+        console.log(response)
         // If request is good,
         // - Update state to indicate user is authenticated
         dispatch({ type: AUTH_USER });
@@ -46,10 +48,11 @@ export function signinUser({ username, password }) {
         // browserHistory.push('/dashboard');
         dispatch(push('/dashboard'));
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log(Object.keys(error.response), error.response)
         // If request is bad,
         // - Show an error to the user
-        dispatch(authError('Bad Login Info'));
+        dispatch(authError('Bad Login Info')); //pass the error here.
       });
   }
 }

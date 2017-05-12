@@ -15,6 +15,8 @@ module.exports = function(app) {
     res.send({ message: 'Super secret code is abc123.'});
   });
 
+  console.log(requireSignin)
+  // {status: false, errorMessage: "Invalid Credentials"}
   app.post('/signin', requireSignin, Authentication.signin);
 
   app.post('/signup', Authentication.signup);
