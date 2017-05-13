@@ -1,6 +1,7 @@
-@import 'test';
+@import "abacus/custom-variables";
+@import "~bootstrap/scss/bootstrap";
+@import "abacus/abacus-theme";
+
 .error {
   color: red;
 }
-
-$navbar-default-bg: blue;

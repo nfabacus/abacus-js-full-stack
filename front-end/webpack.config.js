@@ -1,12 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const VENDOR_LIBS = [
   "axios",
   "babel-preset-stage-1",
   "bootstrap-loader",
-  "bootstrap-sass",
+  // "bootstrap-sass",
   "history",
   "jquery",
   "lodash",
