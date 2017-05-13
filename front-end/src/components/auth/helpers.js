@@ -1,5 +1,5 @@
 
-class Helpers {
+const Helpers = {
   validate(formProps) {
     const errors = {};
 
@@ -28,7 +28,6 @@ class Helpers {
 
     return errors;
   }
-
 
 
 }
