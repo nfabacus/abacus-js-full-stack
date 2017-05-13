@@ -1,5 +1,6 @@
 // webpack entry point
+import "bootstrap/scss/bootstrap.scss";
 
-require('./scss/master.scss');
+import './scss/master.scss';
 
-require('./reactApp.js');
+import './reactApp.js';

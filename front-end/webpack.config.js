@@ -1,12 +1,12 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const VENDOR_LIBS = [
   "axios",
   "babel-preset-stage-1",
-  "bootstrap-loader",
+  // "bootstrap-loader",
   // "bootstrap-sass",
   "history",
   "jquery",
@@ -54,7 +54,7 @@ module.exports = {
       },
       {
           test: /\.scss$/,
-          exclude: /node_modules/,
+          // exclude: /node_modules/,
           loaders: [
               'style-loader', //from webpack2 you have to use style-loader for below loaders to take effect. this will covert css to javascript.
               'css-loader',
