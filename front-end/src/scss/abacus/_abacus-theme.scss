@@ -1,1 +1,50 @@
 @import 'abacus/test';
+
+html, body, .app {
+  height: 100%;
+  // font-family: 'Quicksand', sans-serif;
+}
+
+.btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.pageContainer {
+  height: 100%;
+}
+
+.error {
+  color: red;
+}
+
+
+/*****   Navbar   *******/
+.light-translucent {
+  background-color: rgba(255, 255, 255, 0.82);
+}
+
+/*****   Banner   *******/
+#banner {
+  background: url('../images/banner.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items:center;
+  .fa {
+    margin: 5% 0;
+  }
+  a .fa {
+    color: white;
+    &:hover {
+      color: #ccc;
+    }
+  }
+}
+
+/***** End Banner *******/
+
+/*****   Social   *******/
+#social {
+  padding: 4.35em 0;
+}

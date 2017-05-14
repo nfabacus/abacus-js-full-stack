@@ -4,9 +4,9 @@ import * as actions from '../../actions';
 import {connect} from 'react-redux';
 
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
-  <div>
-    <label>{label}</label>
-    <div>
+  <div className="form-group row">
+    <label className="col-2 col-form-label">{label}: </label>
+    <div className="col-10">
       <input className="form-control" {...input} placeholder={label} type={type}/>
       {touched && error && <div className="error">{error}</div>}
     </div>
@@ -33,19 +33,28 @@ class Signin extends Component {
     const {handleSubmit} = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset className="form-group">
-          <label>Username:</label>
-          <Field name="username" component={renderField}  className="form-control" />
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Password:</label>
-          <Field name="password" component={renderField} type="password" className="form-control" />
-        </fieldset>
 
-        {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign in</button>
-      </form>
+      <div className="container mt-5">
+        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <div className="form-group row">
+            <div className="col-10">
+              <Field label="Username" name="username" component={renderField} />
+            </div>
+          </div>
+          <div className="form-group row">
+            <div className="col-10">
+              <Field label="Password" name="password" component={renderField} type="password" />
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <div className="offset-sm-2 col-sm-10">
+              {this.renderAlert()}
+              <button action="submit" className="btn btn-primary">Sign in</button>
+            </div>
+          </div>
+        </form>
+      </div>
     );
   }
 }

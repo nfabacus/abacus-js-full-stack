@@ -6,10 +6,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const VENDOR_LIBS = [
   "axios",
   "babel-preset-stage-1",
-  // "bootstrap-loader",
-  // "bootstrap-sass",
+  "bootstrap",
   "history",
   "jquery",
+  "tether",
   "lodash",
   "react",
   "react-dom",
@@ -63,7 +63,7 @@ module.exports = {
           ]
       },
       {
-          test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+          test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
           loader: 'url-loader?limit=100000'
       }
     ]

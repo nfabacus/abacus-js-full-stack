@@ -37,28 +37,30 @@ class Signup extends Component {
     const { handleSubmit} = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset className="form-group">
-          <label>Email:</label>
-          <Field name="email" component={renderField} type="text" className="form-control" />
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Username:</label>
-          <Field name="username" component={renderField} type="text" className="form-control"/>
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Password:</label>
-          <Field name="password" component={renderField} type="password" className="form-control" />
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Confirm password:</label>
-          <Field name="passwordConfirm" component={renderField} type="password"  className="form-control" />
-        </fieldset>
+      <div className="container mt-5">
+        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <fieldset className="form-group">
+            <label>Email:</label>
+            <Field name="email" component={renderField} type="text" className="form-control" />
+          </fieldset>
+          <fieldset className="form-group">
+            <label>Username:</label>
+            <Field name="username" component={renderField} type="text" className="form-control"/>
+          </fieldset>
+          <fieldset className="form-group">
+            <label>Password:</label>
+            <Field name="password" component={renderField} type="password" className="form-control" />
+          </fieldset>
+          <fieldset className="form-group">
+            <label>Confirm password:</label>
+            <Field name="passwordConfirm" component={renderField} type="password"  className="form-control" />
+          </fieldset>
 
-        {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign up</button>
+          {this.renderAlert()}
+          <button action="submit" className="btn btn-primary">Sign up</button>
 
-      </form>
+        </form>
+      </div>
     );
   }
 }

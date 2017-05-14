@@ -8,7 +8,7 @@ class Header extends Component {
     if(this.props.authenticated) {
       // show a link to sign out
       return(
-        <ul className="nav navbar-nav">
+        <ul className="navbar-nav mr-auto">
           <li className="nav-item">
               <Link className="nav-link" to="/signout">Sign out</Link>
           </li>
@@ -17,7 +17,7 @@ class Header extends Component {
     } else {
       // show a link to sign in or sign up
       return (
-        <ul className="nav navbar-nav">
+        <ul className="navbar-nav mr-auto">
           <li className="nav-item" key={1}>
             <Link className="nav-link" to="/signin">Sign in</Link>
           </li>
@@ -32,23 +32,17 @@ class Header extends Component {
 
   render() {
     return(
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
-
+      <nav className="navbar navbar-toggleable-md navbar-light fixed-top light-translucent">
          <div className="navbar-header">
-           <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-             <span className="sr-only">Toggle navigation</span>
-             <span className="icon-bar"></span>
-             <span className="icon-bar"></span>
-             <span className="icon-bar"></span>
+           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span className="navbar-toggler-icon"></span>
            </button>
            <Link to="/" className="navbar-brand">Abacus Learning Lab</Link>
          </div>
 
-         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {this.renderLinks()}
          </div>
-        </div>
       </nav>
     );
   }
