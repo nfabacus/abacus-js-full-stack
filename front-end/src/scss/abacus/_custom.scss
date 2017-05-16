@@ -2,3 +2,18 @@
 //
 // Copy settings from this file into the provided `_custom.scss` to override
 // the Bootstrap defaults without modifying key, versioned files.
+
+// $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base: 1.25rem !default;
+
+// $font-size-lg:   1.25rem !default;
+$font-size-lg:   1.4rem !default;
+$font-size-sm:   .875rem !default;
+$font-size-xs:   .75rem !default;
+
+
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;

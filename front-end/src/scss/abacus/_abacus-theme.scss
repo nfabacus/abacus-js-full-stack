@@ -17,6 +17,17 @@ html, body, .app {
   color: red;
 }
 
+.display-2 {
+  @include media-breakpoint-down(md) {
+    font-size: 2.5rem;
+  }
+}
+.display-4 {
+  @include media-breakpoint-down(md) {
+    font-size: 2rem;
+  }
+}
+
 
 /*****   Navbar   *******/
 .light-translucent {
@@ -28,9 +39,19 @@ html, body, .app {
   background: url('../images/banner.jpg') center center no-repeat;
   background-size: cover;
   height: 100%;
-  color: white;
   display: flex;
   align-items:center;
+  padding-top: 150px;
+  @include media-breakpoint-down(md){
+    padding-top: 250px;
+  }
+  .card {
+    background-color: rgba(255, 255, 255, 0.73);
+  }
+  .strapline {
+    color: white;
+  }
+
   .fa {
     margin: 5% 0;
   }
@@ -40,11 +61,28 @@ html, body, .app {
       color: #ccc;
     }
   }
+
 }
+
 
 /***** End Banner *******/
 
 /*****   Social   *******/
 #social {
   padding: 4.35em 0;
+  .fa {
+    width: 60px;
+    height: 60px;
+    text-align:center;
+    padding: 12px 0;
+    border-radius:10px;
+    transition:all 0.5s ease-in-out;
+    margin-top: 5px;
+    font-size: 35px;
+
+    &:hover {
+      color: white;
+      background-color: blue;
+    }
+  }
 }
