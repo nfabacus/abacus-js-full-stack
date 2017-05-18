@@ -5,6 +5,10 @@ html, body, .app {
   // font-family: 'Quicksand', sans-serif;
 }
 
+h3 {
+  color: $body-color;
+}
+
 .btn {
   transition: all 0.3s ease-in-out;
 }
@@ -19,14 +23,10 @@ html, body, .app {
 
 .display-2 {
   @include media-breakpoint-down(md) {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 }
-.display-4 {
-  @include media-breakpoint-down(md) {
-    font-size: 2rem;
-  }
-}
+
 
 
 /*****   Navbar   *******/
@@ -42,16 +42,12 @@ html, body, .app {
   display: flex;
   align-items:center;
   padding-top: 150px;
-  @include media-breakpoint-down(md){
-    padding-top: 250px;
-  }
-  .card {
-    background-color: rgba(255, 255, 255, 0.73);
-  }
-  .strapline {
+  color: white;
+  font-weight: 800;
+
+  h1, h3 {
     color: white;
   }
-
   .fa {
     margin: 5% 0;
   }
@@ -62,10 +58,17 @@ html, body, .app {
     }
   }
 
+  // @include media-breakpoint-down(md){
+  //   padding-top: 250px;
+  // }
 }
 
-
 /***** End Banner *******/
+
+/*****   About us   *******/
+
+
+/*****   End About us   *******/
 
 /*****   Social   *******/
 #social {
@@ -79,10 +82,11 @@ html, body, .app {
     transition:all 0.5s ease-in-out;
     margin-top: 5px;
     font-size: 35px;
+    color: #27a8c7;
 
     &:hover {
       color: white;
-      background-color: blue;
+      background-color: #27a8c7;
     }
   }
 }

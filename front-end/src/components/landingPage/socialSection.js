@@ -9,7 +9,7 @@ const SocialSection = ()=>
           <hr className="mx-0" width="250px"/>
           <p>Etiam aliquet erat non justo varius pellentesque. Quisque viverra nec lacus volutpat ornare. Etiam molestie nisl odio. </p>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 text-center">
           <ul className="list-inline">
             <li className="list-inline-item"><a href="#"><i className="fa fa-youtube fa-2x"></i></a></li>
             <li className="list-inline-item"><a href="#"><i className="fa fa-facebook fa-2x"></i></a></li>

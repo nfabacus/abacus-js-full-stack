@@ -2,6 +2,15 @@
 //
 // Copy settings from this file into the provided `_custom.scss` to override
 // the Bootstrap defaults without modifying key, versioned files.
+// $font-family-base:       $font-family-sans-serif !default;
+
+$font-family-base: 'Open Sans', sans-serif !default;
+
+// $body-color:    $gray-dark !default;
+$body-color:    #c93c8c !default;
+
+// $headings-color:         inherit !default;
+$headings-color:         #27a8c7 !default;
 
 // $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-base: 1.25rem !default;
