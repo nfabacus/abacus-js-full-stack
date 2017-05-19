@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link} from 'react-router';
+import Scrollchor from 'react-scrollchor';
 
 
 class Header extends Component {
@@ -24,6 +25,9 @@ class Header extends Component {
           <li className="nav-item" key={2}>
             <Link className="nav-link" to="/signup">Sign up</Link>
           </li>
+          <li className="nav-item" key={3}>
+            <a className="nav-link" href="/#about">About</a>
+          </li>
         </ul>
       );
     }
@@ -38,6 +42,7 @@ class Header extends Component {
              <span className="navbar-toggler-icon"></span>
            </button>
            <Link to="/" className="navbar-brand">Abacus Learning Lab</Link>
+
          </div>
 
          <div className="collapse navbar-collapse" id="navbarSupportedContent">

@@ -41,7 +41,7 @@ ReactDOM.render(
     <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={LandingPage} />
-
+          <Route path="/about" component={LandingPage} />
           <Route path="/signup" component={HideFromAuth(Signup)} />
           <Route path="/signin" component={HideFromAuth(Signin)} />
           <Route path="/signout" component={Signout} />
