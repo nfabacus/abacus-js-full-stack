@@ -1,5 +1,5 @@
 import React from 'react';
-import Scrollchor from 'react-scrollchor';
+import { Link } from 'react-router';
 
 const BannerSection = ()=>
   <section id="banner">
@@ -15,7 +15,7 @@ const BannerSection = ()=>
 
       <div className="row">
         <div className="col-md-12 text-center">
-          <a href="#about"><i className="fa fa-chevron-down fa-3x" aria-hidden="true"></i></a>
+          <Link to="/about"><i className="fa fa-chevron-down fa-3x" aria-hidden="true"></i></Link>
         </div>
       </div>
     </div>

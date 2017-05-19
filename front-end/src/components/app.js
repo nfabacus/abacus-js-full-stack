@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './header';
-
+import Header from './shared/header';
+import SocialSection from './shared/socialSection';
 
 export default class App extends Component {
   render() {
@@ -8,6 +8,7 @@ export default class App extends Component {
       <div className="pageContainer">
         <Header/>
         {this.props.children}
+        <SocialSection />
       </div>
     );
   }

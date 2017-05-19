@@ -9,6 +9,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './components/app';
 import { AUTH_USER } from './actions/types';
 import LandingPage from './components/landingPage/landingPage';
+import AboutPage from './components/aboutPage/aboutPage';
 import Signup from './components/auth/signup';
 import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
@@ -41,7 +42,7 @@ ReactDOM.render(
     <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={LandingPage} />
-          <Route path="/about" component={LandingPage} />
+          <Route path="/about" component={AboutPage} />
           <Route path="/signup" component={HideFromAuth(Signup)} />
           <Route path="/signin" component={HideFromAuth(Signin)} />
           <Route path="/signout" component={Signout} />

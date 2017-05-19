@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import SubSection from './subSection';
 import renderHTML from 'react-render-html';
 
-class AboutSection extends Component {
+export default class AboutSection extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -22,7 +21,8 @@ class AboutSection extends Component {
     });
   }
 
-  render() {
+
+  render(){
     const titles = this.state.subContents.map((content)=>{
       return (
       <li onClick={()=>this.selectTitle(content.title)} className="list-inline-item tab" key={content.title}> { content.title } </li>
@@ -37,36 +37,22 @@ class AboutSection extends Component {
       )
     }
 
-    return(
-      <section id="about">
-        <div className="container text-center">
-          <div className="row">
-            <div className="col-md-12 py-5">
-              <h1>Welcome to Abacus Learning Lab!</h1>
-              <br />
-              <h3>Learning place where tradition meets innovation.</h3>
-              <h3>Let us support your child's learning!</h3>
-            </div>
+    return (
+      <div>
+        <div className="row">
+          <div className="col-md-12 text-center">
+            <ul className="list-inline">
+              { titles }
+            </ul>
           </div>
-
-          <div className="row">
-            <div className="col-md-12 text-center">
-              <ul className="list-inline">
-                { titles }
-              </ul>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-12 text-center subContent">
-              { selectedSubContent() }
-            </div>
-          </div>
-
         </div>
-      </section>
+
+        <div className="row">
+          <div className="col-md-12 text-center subContent">
+            { selectedSubContent() }
+          </div>
+        </div>
+      </div>
     );
   }
 }
-
-export default AboutSection;
