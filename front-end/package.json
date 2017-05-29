@@ -9,7 +9,7 @@
     "build": "npm run clean && webpack -p",
     "serve": "webpack-dev-server --progress --colors --hot",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test --watch"
   },
   "author": "",
   "license": "ISC",

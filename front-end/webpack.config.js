@@ -56,8 +56,8 @@ module.exports = {
           test: /\.scss$/,
           // exclude: /node_modules/,
           loaders: [
-              'style-loader', //from webpack2 you have to use style-loader for below loaders to take effect. this will covert css to javascript.
-              'css-loader',
+              'style-loader', //Takes CSS imports and adds them to the HTML document
+              'css-loader', //knows how to deal with css
               'autoprefixer-loader?browsers=last 3 versions',
               'sass-loader?outputStyle=expanded' //this one is applied first.
           ]
