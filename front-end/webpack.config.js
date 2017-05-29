@@ -53,14 +53,14 @@ module.exports = {
         test: /\.html$/
       },
       {
-          test: /\.scss$/,
-          // exclude: /node_modules/,
-          loaders: [
-              'style-loader', //Takes CSS imports and adds them to the HTML document
-              'css-loader', //knows how to deal with css
-              'autoprefixer-loader?browsers=last 3 versions',
-              'sass-loader?outputStyle=expanded' //this one is applied first.
-          ]
+        use: [
+            'style-loader', //Takes CSS imports and adds them to the HTML document
+            'css-loader', //knows how to deal with css
+            'autoprefixer-loader?browsers=last 3 versions',
+            'sass-loader?outputStyle=expanded' //this one is applied first.
+        ],
+        test: /\.scss$/,
+        exclude: /node_modules/
       },
       {
           test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
