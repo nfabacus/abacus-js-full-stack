@@ -24,6 +24,6 @@ module.exports = function(app) {
   app.get('/course', Permission.confirmStudent, function(req, res){
     res.send({ message: 'You are a student!'});
   });
-  // app.get('/course', Permission.confirmStudent,  Permission.confirmParent, ClassController.getClass)
+  // app.get('/course', Permission.confirmStudent, Permission.confirmParent, ClassController.getClass)
 
 }

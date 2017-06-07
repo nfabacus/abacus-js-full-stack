@@ -29,6 +29,7 @@ exports.signup = function(req, res, next) {
 
   // See if a user with the given username exists
   User.findOne({ username: username }, function(err, existingUser){
+    //In case it returns some error e.g. database connection error, return the error.
     if(err) { return next(err); }
 
     // If a user with username exist, return an error.
