@@ -49,7 +49,7 @@ exports.signup = function(req, res, next) {
       if (err) { return next(err); }
     });
 
-    // Respond to request indicating the user was created
+    //Use CreateUserToken function at the top of this file. Create a User JWT token and send it back as a response.
     res.json({ token: tokenForUser(user) });
   });
 

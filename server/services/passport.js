@@ -6,8 +6,8 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
 
 // Create local Strategy
-const localOptions = { usernameField: 'username' };
-const localLogin = new LocalStrategy(localOptions, function(username, password, done) {
+const localOptions = { usernameField: 'username' }; //Tell local strategy to use username for login (You can tell 'email' here instead of username if preferred.).
+const localLogin = new LocalStrategy(localOptions, function(username, password, done) { // or you can pass email instead of username if you are using email for login instead.
 
   // do validation here:
   // if fails, return done({error:"failed Validation"}, false)
@@ -37,6 +37,7 @@ const jwtOptions = {
   secretOrKey: config.secret
 };
 // Create JWT Strategy
+ // payload is the decoded JWT token.
 const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
   // See if the user ID in the payload exists in our database
   // If it does, call 'done' with that user
@@ -52,6 +53,6 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
   });
 });
 
-// TEll passport to use this strategy
+// TEll passport to use these strategies.
 passport.use(jwtLogin);
 passport.use(localLogin);
