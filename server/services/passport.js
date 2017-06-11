@@ -25,7 +25,7 @@ const localLogin = new LocalStrategy(localOptions, function(username, password, 
       if(err) { return done(err); }
       if(!isMatch) { return done(null, false); }
 
-      return done(null, user);
+      return done(null, user); //done callback is provided by passport. It makes user available as req.user.
     });
   });
 
